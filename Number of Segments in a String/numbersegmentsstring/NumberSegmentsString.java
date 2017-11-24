@@ -38,4 +38,20 @@ public class NumberSegmentsString {
         
         return result;
     }
+	
+    public static int countSegments2(String s) {
+        if (s == null || s.isEmpty()) {
+            return 0;
+        }
+        
+        int count = 0;
+        int i = 0;
+        while(i < s.length()) {
+            while(i < s.length() && s.charAt(i) == ' ') i++;
+            if (i < s.length()) count++;
+            while(i < s.length() && s.charAt(i) != ' ') i++;
+        }
+        
+        return count;
+    }
 }
